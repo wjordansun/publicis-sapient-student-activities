@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Layout</title>
     <style>
-        .item1 { grid-area: header; }
-        .item2 { grid-area: menu; }
+        .item1 { grid-area: header; height: 50px; }
+        .item2 { grid-area: menu; height:300px }
         .item3 { grid-area: main; }
         .item4 { grid-area: right; }
-        .item5 { grid-area: footer; }
+        .item5 { grid-area: footer; height: 50px; }
         
         .grid-container {
           display: grid;
@@ -18,7 +18,10 @@
             'menu main main main main right'
             'footer footer footer footer footer footer';
           gap: 10px;
+          align-self: center;
           padding: 10px;
+          width: 1200px;
+          height: 600px;
         }
         
         .grid-container > div {
