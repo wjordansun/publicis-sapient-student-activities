@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <h1>Form to submit</h1>
+
+    <form method="post" action="#">
+        <table>
+            <tr>
+                <td>
+                    <label>
+                        Enter Name: <input type="text" placeholder="Enter your name" />
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Enter Password: <input type="text" placeholder="Enter your password" />
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Gender: <br/>
+                        <label>
+                            Male <input type="radio" />
+                        </label>
+                        <label>
+                            Female <input type="radio" />
+                        </label>
+                        <label>
+                            Other <input type="radio" />
+                        </label>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Skills: <br/>
+                        <label>
+                            HTML <input type="checkbox" />
+                        </label>
+                        <label>
+                            CSS <input type="checkbox" />
+                        </label>
+                        <label>
+                            Javascript <input type="checkbox" />
+                        </label>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="cars">Qualifications:</label>
+                        <select id="quals" name="quals">
+                            <option value="High School">High School</option>
+                            <option value="Bachelor's">Bachelor's</option>
+                            <option value="Master's">Master's</option>
+                            <option value="PhD">PhD</option>
+                        </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Date of Birth: <input type="date" />
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="submit" value="register">
+                    <input type="reset" value="reset">
+                </td>
+                
+            </tr>
+            
+        </table>
+    </form>
+    
+</body>
+</html>
