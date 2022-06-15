@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <h1>Form to submit</h1>
+
+    <form method="post" action="eventimage.html" name="login" onsubmit="return handleSubmit()">
+        <table>
+            <tr>
+                <td>
+                    <label>
+                        Firstname: <input type="text" placeholder="Enter your name" name="first"/>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Lastname: <input type="text" placeholder="Enter your name" name="last"/>
+                    </label>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <p>Gender:</p>
+                        <input type="radio" id="male" name="gender" value="Male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="Female">
+                        <label for="female">Female</label>
+                        <input type="radio" id="other" name="gender" value="Other">
+                        <label for="other">Other</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Enter Password: <input type="text" placeholder="Enter your password" name="password"/>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Confirm Password: <input type="text" placeholder="Enter your password" name="conpassword"/>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Skills: <br/>
+                        <label>
+                            C <input type="checkbox" id="C" name="skills"/>
+                        </label>
+                        <label>
+                            C++ <input type="checkbox" id="C++" name="skills"/>
+                        </label>
+                        <label>
+                            Java <input type="checkbox" id="Java" name="skills" />
+                        </label>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="register">
+
+                </td>
+                
+            </tr>
+            
+        </table>
+    </form>
+    <script type="text/javascript">
+        function handleSubmit() {
+            let loginForm = document.login;
+            let first = loginForm.first;
+            let last = loginForm.last;
+            let pass = loginForm.password;
+            let conpass = loginForm.conpassword;
+
+            if(first.value.length < 3) {
+                alert("Firstname can't be less then 3 characters");
+                return false;
+            }
+            if(last.value.length < 2) {
+                alert("Firstname can't be less then 2 characters");
+                return false;
+            }
+            if(!document.getElementById("male").checked &&
+             !document.getElementById("female").checked &&
+             !document.getElementById("other").checked) {
+                alert("Must select gender");
+                return false;
+            }
+            if(pass.value != conpass.value) {
+                alert("passwords don't match");
+                return false;
+            }
+            if(!document.getElementById("C").checked &&
+             !document.getElementById("C++").checked &&
+             !document.getElementById("Java").checked) {
+                alert("Must select skills");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

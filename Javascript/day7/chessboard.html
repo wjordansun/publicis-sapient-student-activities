@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chessboard</title>
+</head>
+<body>
+    <h1>Demo Chessboard</h1>
+    <canvas id="c1" style="border:2px solid black" width="400" height="400"></canvas>
+    <script type = "text/javascript">
+        let ctx = document.getElementById("c1").getContext("2d");
+        let counter = 0;
+        for(let i = 0; i<8; i++) {
+            
+            for(let j = 0; j<8; j++) {
+                let k = i*50;
+                let l = j*50;
+
+                if(counter %2 == 0) {
+                    ctx.fillRect(k, l, 50, 50)
+                }
+                
+                counter++;
+            }
+            counter++;
+        }
+    </script>
+</body>
+</html>

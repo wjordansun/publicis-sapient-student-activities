@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .smallImages {
+            width: 100; height: 100;
+            border: 2px solid black;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Demo Events</h1>
+    <img src = "pics/balloon.jpeg" width="400" height="400" id="main"/>
+
+    <div onclick="changeImages(event)" style = "border: 2px solid black;">
+        <img src = "pics/balloon.jpeg" class="smallImages"/>
+        <img src = "pics/bubble.jpeg" class="smallImages"/>
+        <img src = "pics/heart.jpeg" class="smallImages"/>
+        <img src = "pics/nature.jpeg" class="smallImages"/>
+    </div>
+
+    <script type = "text/javascript">
+        function changeImages(e) {
+            let mainImage = document.getElementById("main");
+            let target = e.target;
+            if(target.tagName == "IMG") {
+                mainImage.src = target.src;
+            }
+        }
+    </script>
+</body>
+</html>
