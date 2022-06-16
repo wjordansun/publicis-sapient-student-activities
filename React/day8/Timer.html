@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React website</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!--creating components inside script-->
+    <script type = "text/babel">
+        class Timer extends React.Component {
+            constructor(props) {
+            super(props);
+            this.state = { seconds: 0 };
+           }
+
+           tick() {
+                this.setState(state => ({
+                seconds: state.seconds + 1
+                 }));
+           }
+
+           componentDidMount() {
+            this.interval = setInterval(() => this.tick(), 1000);
+           }
+
+           componentWillUnmount() {
+              clearInterval(this.interval);
+          }
+
+           render() {
+             return (
+                <div>
+                  Seconds: {this.state.seconds}
+                </div>
+              );
+            }
+        }
+        // creating a component that will be a function name must be with uppercase
+        function App() {
+            return (<div>
+                <h1>This is root component</h1>
+                <Timer />
+            </div>);
+        }
+        // patching the component to the browser DOM
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
