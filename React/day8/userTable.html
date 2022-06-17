@@ -1,49 +1,59 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>React website</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="root"></div>
 
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <!--creating components inside script-->
-    <script type = "text/babel">
-        function UserList() {
-            let users = [{name: "Alex", age: 35, gender: "Male"}, {name: "Suma", age:40, gender: "Female"}];
-            return (<div>
-              
-                    <table border="2px solid black">
-                        <tr>
-                          <th>name</th>
-                          <th>age</th>
-                          <th>gender</th>
-                        </tr>
-                        {users.map(item =>
-                        <tr>
-                          <td>{item.name}</td>
-                          <td>{item.age}</td>
-                          <td>{item.gender}</td>
-                        </tr>)}
-                        
-                    </table>
-                
-                
-            </div>);
-        }
-        // creating a component that will be a function name must be with uppercase
-        function App() {
-            return (<div>
-                <h1>This is root component</h1>
-                <UserList />
-            </div>);
-        }
-        // patching the component to the browser DOM
-        ReactDOM.render(<App />, document.getElementById('root'));
+    <script type="text/babel">
+      function UserList() {
+        let users = [
+          { name: "Alex", age: 35, gender: "Male" },
+          { name: "Suma", age: 40, gender: "Female" },
+        ];
+        return (
+          <div>
+            <table border="2px solid black">
+              <tr>
+                <th>name</th>
+                <th>age</th>
+                <th>gender</th>
+              </tr>
+              {users.map((item) => (
+                <tr>
+                  <td>{item.name}</td>
+                  <td>{item.age}</td>
+                  <td>{item.gender}</td>
+                </tr>
+              ))}
+            </table>
+          </div>
+        );
+      }
+      // creating a component that will be a function name must be with uppercase
+      function App() {
+        return (
+          <div>
+            <h1>This is root component</h1>
+            <UserList />
+          </div>
+        );
+      }
+      // patching the component to the browser DOM
+      ReactDOM.render(<App />, document.getElementById("root"));
     </script>
-</body>
+  </body>
 </html>
